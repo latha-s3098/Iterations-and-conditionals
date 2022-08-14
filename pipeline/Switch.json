@@ -1,0 +1,74 @@
+{
+	"name": "Switch",
+	"properties": {
+		"activities": [
+			{
+				"name": "Switch1",
+				"type": "Switch",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"on": {
+						"value": "@string(pipeline().parameters.Enteryouroption)",
+						"type": "Expression"
+					},
+					"cases": [
+						{
+							"value": "add",
+							"activities": [
+								{
+									"name": "Set variable1",
+									"type": "SetVariable",
+									"dependsOn": [],
+									"userProperties": [],
+									"typeProperties": {
+										"variableName": "result",
+										"value": {
+											"value": "@string(add(pipeline().parameters.a,pipeline().parameters.b))",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						},
+						{
+							"value": "mul",
+							"activities": [
+								{
+									"name": "Set variable1_copy1",
+									"type": "SetVariable",
+									"dependsOn": [],
+									"userProperties": [],
+									"typeProperties": {
+										"variableName": "result",
+										"value": {
+											"value": "@string(mul(pipeline().parameters.a,pipeline().parameters.b))",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"Enteryouroption": {
+				"type": "string"
+			},
+			"a": {
+				"type": "int"
+			},
+			"b": {
+				"type": "int"
+			}
+		},
+		"variables": {
+			"result": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
