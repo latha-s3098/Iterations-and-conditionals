@@ -1,0 +1,9 @@
+{
+	"name": "Projectone",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "090159e2-ab57-411f-9b2f-0b10ec305183",
+		"tenantId": "7d327674-f270-46c0-9de4-3d9e7e1d388b"
+	}
+}
